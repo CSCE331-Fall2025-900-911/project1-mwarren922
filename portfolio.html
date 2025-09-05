@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+    <h1>Portfolio</h1>
+    <div>
+        <div style="width: 700px">
+            <h2>Projects: </h2>
+            <div>
+                <h3>Resi Low Cost Encoder: </h3>
+                <p>Adapted the <a href="https://www.mekotronics.com/h-pd-54.html">Mekotronics R58X</a> with custom kernel modules and implemented custom <a href="https://www.armbian.com/">Armbian OS</a> to enable low cost 1080p video streaming for small to mid-size churches.</p>
+                <div><img src="resi_mini.png" style="height: 40vh; width: auto;"></div>
+                <div><a href="https://resi.io/hardware/mini/">Resi Mini Encoder</a>
+            </div>
+            <div>
+                <h3>Resi OS Migration: </h3>
+                <p>To replace Centos 7, which was being used by Resi Media's x86 encoders, I created a custom and lightweight distribution of Debian 12, fine tuned for video encoding/decoding Using Debian's live-build tool. I implemented git-like version control on this OS, using OSTree for seamless deployment of updates.</p>
+                <p>I also developed and implemeted a live-migration tool for porting systems from CentOS7 to Debian 12 without any user interaction.  </p>
+                <div><a href="https://www.debian.org/devel/debian-live/">Debian Live Build</a>
+                <div><a href="https://support.pushpay.com/s/article/decoder-release-notes?type=resi/">Resi Decoder Release Notes</a>
+            </div>
+        </div>   
+
+    </div>
+</body>
+</html>
