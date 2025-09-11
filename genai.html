@@ -1,12 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deck of Cards</title>
+  <link id="theme-style" rel="stylesheet" href="style_dark.css">
+  <style>
+    body {
+      background-color: #303030;
+      color: #fff;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header.header {
+      display: flex;
+      align-items: center;
+      background: #303030;
+      gap: 12px;
+      padding: 12px 10vw;
+    }
+    .header-name {
+      color: #fff;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 10vw;
+    }
+    .deck-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .card-stack {
+      position: relative;
+      width: 120px;
+      height: 180px;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s;
+    }
+    .card-stack:hover {
+      box-shadow: 0 0 20px #51eefc88;
+    }
+    .card-back {
+      position: absolute;
+      width: 120px;
+      height: 180px;
+      background: linear-gradient(135deg, #1269cc 60%, #51eefc 100%);
+      border-radius: 12px;
+      border: 3px solid #fff;
+      box-shadow: 0 8px 24px #0008;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      user-select: none;
+      transition: top 0.1s, left 0.1s;
+    }
+    /* Stack effect */
+    .card-back {
+      z-index: 1;
+    }
+    .card-back[data-pos] {
+      top: calc(var(--i) * 3px);
+      left: calc(var(--i) * 3px);
+      z-index: calc(10 - var(--i));
+    }
+    .card-back:last-child {
+      z-index: 20;
+    }
+    .flipped-cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      min-height: 200px;
+    }
+    .flipped-card {
+      width: 120px;
+      height: 180px;
+      background: #fff;
+      color: #1269cc;
+      border-radius: 12px;
+      border: 3px solid #51eefc;
+      box-shadow: 0 4px 12px #0006;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      user-select: none;
+      transition: transform 0.2s;
+    }
+    .deck-label {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .card-stack, .flipped-card {
+        width: 70px;
+        height: 105px;
+        font-size: 1.2rem;
+      }
+      .flipped-cards-row {
+        min-height: 110px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>GenAI Page</h1>
-    
+  <header class="header">
+    <h2 class="header-name">Deck of Cards</h2>
+    <div class="header-links" style="margin-left:auto;">
+      <a href="./index.html" style="color:lightgray;text-decoration:none;">Home</a>
+    </div>
+  </header>
+  <main>
+    <div class="deck-container">
+      <div class="deck-label">Click the stack to flip a card</div>
+      <div class="card-stack" id="card-stack" title="Click to flip top card">
+        <!-- Cards will be rendered here -->
+      </div>
+    </div>
+    <div class="deck-label">Flipped Cards:</div>
+    <div class="flipped-cards-row" id="flipped-cards-row">
+      <!-- Flipped cards will appear here -->
+    </div>
+  </main>
+  <script>
+    // Simple deck: 10 cards, labeled 1-10
+    const deck = Array.from({length: 10}, (_, i) => i + 1);
+    let stack = [...deck];
+    let flipped = [];
+
+    const cardStack = document.getElementById('card-stack');
+    const flippedRow = document.getElementById('flipped-cards-row');
+
+    function renderStack() {
+      cardStack.innerHTML = '';
+      stack.forEach((num, i) => {
+        const card = document.createElement('div');
+        card.className = 'card-back';
+        card.style.setProperty('--i', i);
+        card.setAttribute('data-pos', i);
+        card.textContent = '🂠';
+        cardStack.appendChild(card);
+      });
+      if (stack.length === 0) {
+        cardStack.innerHTML = '<div class="card-back" style="background:#444;color:#aaa;cursor:default;">Empty</div>';
+        cardStack.style.cursor = 'default';
+      } else {
+        cardStack.style.cursor = 'pointer';
+      }
+    }
+
+    function renderFlipped() {
+      flippedRow.innerHTML = '';
+      flipped.forEach(num => {
+        const card = document.createElement('div');
+        card.className = 'flipped-card';
+        card.textContent = num;
+        flippedRow.appendChild(card);
+      });
+    }
+
+    cardStack.addEventListener('click', () => {
+      if (stack.length === 0) return;
+      const card = stack.shift();
+      flipped.push(card);
+      renderStack();
+      renderFlipped();
+    });
+
+    // Initial render
+    renderStack();
+    renderFlipped();
+  </script>
 </body>
 </html>

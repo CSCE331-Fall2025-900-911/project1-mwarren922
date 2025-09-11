@@ -3,27 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service</title>
+    <title>Portfolio</title>
+    <link id="theme-style" rel="stylesheet" href="style_dark.css">
 </head>
 <body>
-    <div><h1>Service</h1></div>
-
-    <div>   
-        <h2>Service Activities: </h2>
-        <div>
-            <h3>Freshman Leaders in New Technology: Union Committee</h3>
-            <ul>
-                <li>
-                    <strong>Community Service:</strong> Planned community service events and fundraisers in the College Station area. Coordinated
-                    with Texas Ramp Project and Big Event to serve local area.
-                </li>
-                <li>
-                    <strong>PET Plastic to 3D Fillament Recycler:</strong> Designed and assembled a PET plastic-to-filament converter to recycle
-                    water bottles.
-                </li>
-            </ul>
+    <header class="header">
+        <h2 class="header-name">Service</h2>
+        <div class="header-links">
+            <a href="./index.html">Home</a>
+            <a href="./qualifications.html">Qualifications</a>
+            <a href="./service.html">Service</a>
+            <a href="./genai.html">GenAI</a>
+            <button 
+            class="theme-toggle" 
+            id="theme-toggle" 
+            title="Toggles light & dark" 
+            aria-label="auto" 
+            aria-live="polite"
+            >
+                Style Switch
+            </button>
         </div>
-    </div>
+    </header>
+    <main>
+        <section id="project-heading">
+            <div class="subheading">
+            <p class="subheading-text">Freshman Leaders in New Technology (FLiNT)</p>
+            <div class="triangle-heading"></div>    
+        </section>
 
+        <section class="activity-containers">
+            <div class="activity-container">
+                <div class="activity-image-container">
+                    <img class="activity-image" src="placeholder-1024x1024.png">
+                    <p class="activity-image-caption">Union Service Committee</p>
+                </div>
+                <div class="activity-text-container">
+                    <div class="activity-text">
+                        <p>
+                            FLiNT is an organization that seeks to give freshman students experience with engineering projects, equipping them with problem-solving skills for job seeking. I was a member of the Union Committee, which organized community service events such as cleaning parks, building ramps for disabled homeowners, and collaborating with Big Event, TAMU’s largest community service project.
+                        </p>
+                    </div>
+                    <div class="triangle-text-box"></div>  
+                </div>
+            </div>
+
+            <div class="activity-container">
+                <div class="activity-image-container">
+                    <img class="activity-image" src="placeholder-1024x1024.png">
+                    <p class="activity-image-caption">Bottle to Fillament Converter</p>
+                </div>
+                <div class="activity-text-container">
+                    <div class="activity-text">
+                        <p>
+                            Serving on the Union Committee, we devised an engineering project to create a PET plastic-to-filament converter that would recycle water bottles. The design consisted of a cylinder to hold the bottle, with a razor to cut it into a small strip. This strip was fed through a heating element into a spool. This whole process was controlled by an Arduino that spins the spool and adjusts the temperature of the heating element.
+                        </p>
+                    </div>
+                    <div class="triangle-text-box"></div>  
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>

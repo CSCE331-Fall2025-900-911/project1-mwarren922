@@ -4,27 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link id="theme-style" rel="stylesheet" href="style_dark.css">
 </head>
 <body>
-    <h1>Portfolio</h1>
-    <div>
-        <div style="width: 700px">
-            <h2>Projects: </h2>
-            <div>
-                <h3>Resi Low Cost Encoder: </h3>
-                <p>Adapted the <a href="https://www.mekotronics.com/h-pd-54.html">Mekotronics R58X</a> with custom kernel modules and implemented custom <a href="https://www.armbian.com/">Armbian OS</a> to enable low cost 1080p video streaming for small to mid-size churches.</p>
-                <div><img src="resi_mini.png" style="height: 40vh; width: auto;"></div>
-                <div><a href="https://resi.io/hardware/mini/">Resi Mini Encoder</a>
-            </div>
-            <div>
-                <h3>Resi OS Migration: </h3>
-                <p>To replace Centos 7, which was being used by Resi Media's x86 encoders, I created a custom and lightweight distribution of Debian 12, fine tuned for video encoding/decoding Using Debian's live-build tool. I implemented git-like version control on this OS, using OSTree for seamless deployment of updates.</p>
-                <p>I also developed and implemeted a live-migration tool for porting systems from CentOS7 to Debian 12 without any user interaction.  </p>
-                <div><a href="https://www.debian.org/devel/debian-live/">Debian Live Build</a>
-                <div><a href="https://support.pushpay.com/s/article/decoder-release-notes?type=resi/">Resi Decoder Release Notes</a>
-            </div>
-        </div>   
+    <header class="header">
+        <h2 class="header-name">Portfolio</h2>
+        <div class="header-links">
+            <a href="./index.html">Home</a>
+            <a href="./qualifications.html">Qualifications</a>
+            <a href="./service.html">Service</a>
+            <a href="./genai.html">GenAI</a>
+            <button 
+            class="theme-toggle" 
+            id="theme-toggle" 
+            title="Toggles light & dark" 
+            aria-label="auto" 
+            aria-live="polite"
+            >
+                Style Switch
+            </button>
+        </div>
+    </header>
+    <main>
+        <section id="project-heading">
+            <div class="subheading">
+            <p class="subheading-text">Projects</p>
+            <div class="triangle-heading"></div>    
+        </section>
 
-    </div>
+        <section class="activity-containers">
+            <div class="activity-container">
+                <div class="activity-image-container">
+                    <img class="activity-image" src="resi_mini.png">
+                    <p class="activity-image-caption">Resi Low Cost Encoder</p>
+                </div>
+                <div class="activity-text-container">
+                    <div class="activity-text">
+                        <p>
+                            Redi Media, LLC is a software company that specializes in high-quality transmission for web, multisite, and on-demand streaming for churches. Resi sells video encoding and decoding hardware that interfaces with their web services.
+                        </p>
+                        <p>
+                            In 2023, I worked on developing The Resi Mini, an Arm64-based SBC video encoder with a RockChip RK3588 chipset aimed at bringing low-cost 1080p video streaming to smaller churches. My primary contribution to this project was developing a Java application that encodes an HDMI signal and integrating it with Resi’s media upload infrastructure. 
+                        </p>
+                        <p>
+                            This application has two primary responsibilities: recording metadata and utilizing that metadata, along with user preferences, to encode an HDMI signal. I sourced the metadata by parsing V4L2 (Video for Linux 2) to get fields such as resolution, fields per second, and interlaced or progressive format. This information and the desired output format were fed into a GStreamer pipeline that produces stream chunks that can be uploaded to any desired destination.
+                        </p>
+                    </div>
+                    <div class="triangle-text-box"></div>  
+                </div>
+            </div>
+
+            <div class="activity-container">
+                <div class="activity-image-container">
+                    <img class="activity-image" src="CentOS-to-Deb.png">
+                    <p class="activity-image-caption">Resi OS Migration</p>
+                </div>
+                <div class="activity-text-container">
+                    <div class="activity-text">
+                        <p>
+                            To replace CentOS 7, which was being used by Resi Media's x86 encoders, I created a custom and lightweight distribution of Debian 12, fine-tuned for video encoding/decoding, using Debian's live-build tool. I implemented git-like version control on this OS, using OSTree for seamless deployment of updates. I also developed and implemented a live-migration tool for porting systems from CentOS 7 to Debian 12 without any user interaction.
+                        </p>
+                        <p>
+                            The OS Live migration replaces the old system while allowing a rollback until the new OS is operational. The first step is allocating space on a device to write the new operating system. Next, the bootloader is updated to recognize the new OS installation and boot into it. The new OS is built with a slew of tests that verify an operational system and only deletes the old system once they are complete.
+                        </p>
+                    </div>
+                    <div class="triangle-text-box"></div>  
+                </div>
+            </div>
+
+            <div class="activity-container">
+                <div class="activity-image-container">
+                    <img class="activity-image" src="incident-resolution.png">
+                    <p class="activity-image-caption">Hardware Incident Resolution Platform</p>
+                </div>
+                <div class="activity-text-container">
+                    <div class="activity-text">
+                        <p>
+                            The Deprecation of CentOS-7 left many of Resi’s hardware in a non-updatable state. I devised a Python-based cloud worker that accessed every affected device via TeamViewer, navigated to a shell prompt, and injected a command to resolve the issue. The program used Tesseract OCR image detection to navigate the UI, logging various states of failure and success based on the virtual display output. The cloud worker could be triggered and log its results via Google Pub/Sub. This platform resolved the issue on 1000+ encoders, saving hundreds of hours of manual support work and provided a mechanism to deal with similar incidents, should they occur. 
+                        </p>
+                    </div>
+                    <div class="triangle-text-box"></div>  
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>

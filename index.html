@@ -4,18 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Warren</title>
+    <link id="theme-style" rel="stylesheet" href="style_dark.css">
 </head>
 <body>
-    <h1>matthew.warren@tamu ~ %</h1>
-    <div><par>Howdy, I'm Matthew Warren, I'm proud to be a Junior Computer Engineering Major at TAMU! Welcome to my neat website.</par></div>
 
-     <div><img src="matthew_portrait.jpg" style="height: 40vh; width: auto;"></div>
+    <header class="header">
+        <h2 class="header-name">Matthew Warren</h2>
+        <button 
+        class="theme-toggle" 
+        id="theme-toggle" 
+        title="Toggles light & dark" 
+        aria-label="auto" 
+        aria-live="polite"
+        >
+            Style Switch
+        </button>
+    </header>
 
-    <div>
-        <div><a href="./qualifications.html">Qualifications</a>
-        <div><a href="./portfolio.html">Portfolio</a>
-        <div><a href="./service.html">Service</a>
-        <div><a href="./genai.html">AI</a>
-    </div>
+    <main>
+        <h1 class="header-name">Howdy, I'm Matthew Warren</h1>
+        
+        <div class="profile-box">
+                <section class="link-cards">
+                    <div class="card-container-tilt-right">
+                        <a class="link-card" href="./qualifications.html"><strong>Qualifications</strong></a>
+                        <div class="triangle-left"></div>    
+                    </div>
+
+                    <div class="card-container-tilt-left">
+                        <a class="link-card" href="./portfolio.html"><strong>Portfolio</strong></a>
+                        <div class="triangle-left"></div>    
+                    </div>
+            
+                </section>
+
+                <img src="Matthew_Profile.jpg" class="profile-image">
+
+                <section class="link-cards">
+
+                    <div class="card-container-tilt-left">
+                        <a class="link-card" href="./service.html"><strong>Service</strong></a>
+                        <div class="triangle-right"></div>    
+                    </div>
+
+                    <div class="card-container-tilt-right">
+                        <a class="link-card-tiny" href="./genai.html"><strong>AI</strong></a>
+                        <div class="triangle-right"></div>    
+                    </div>   
+                </section>
+        </div>
+
+        <h1 class="header-name">TAMU Computer Engineering 2027</h1>
+
+        <section class="social-links">
+            <a href="https://github.com/Matthew-C-Warren">
+                <img src="github_logo_icon.png" alt="github icon">
+            </a>
+            <a href="https://github.com/Matthew-C-Warren">
+                <img src="linkedin-logo.png" alt="linkedin icon">
+            </a>
+            <a href="mailto:mwarren922@outlook.com">
+                <p>Contact</p>
+            </a>
+        </section>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>

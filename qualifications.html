@@ -3,60 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_dark.css">
     <title>Qualifications</title>
 </head>
 <body>
-    <div><h1>Qualifications</h1></div>
 
-    <div>   
-        <h2>Resume: </h2>
-         <div><iframe src="https://drive.google.com/file/d/1KLOzqgrskQOEhPASgtqB_LNeBw743Xz-/preview" width="640" height="480" allow="autoplay"></iframe></div>
-    </div>
+    <header class="header">
+        <h2 class="header-name">Qualifications</h2>
+        <div class="header-links">
+            <a href="./index.html">Home</a>
+            <a href="./portfolio.html">Portfolio</a>
+            <a href="./service.html">Service</a>
+            <a href="./genai.html">GenAI</a>
+            <button 
+            class="theme-toggle" 
+            id="theme-toggle" 
+            title="Toggles light & dark" 
+            aria-label="auto" 
+            aria-live="polite"
+            >
+                Style Switch
+            </button>
+        </div>
+    </header>
 
-    <div>   
-        <h2>Skills: </h2>
-        <div>
-            <h3>Languages:</h3>
-            <p>These are programming languages I'm proficient in.</p>
-            <div>
-                <ul>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C++</li>
-                    <li>Javascript</li>
-                    <li>Bash</li>
-                    <li>ARM/LEGv8 Assembly</li>
-                </ul>
+    <main>
+        <section class="qualifications-section">
+            <div class="resume-block-container">
+                <div class="subheading">
+                    <p class="subheading-text">Resume</p>
+                    <div class="triangle-heading"></div>
+                </div>
+                <iframe class="resume-window" src="https://drive.google.com/file/d/1KLOzqgrskQOEhPASgtqB_LNeBw743Xz-/preview" width="640" height="800"></iframe>
             </div>
-        </div>
-        <div>
-            <h3>Software</h3>
-            <p>These are software libraries that I have in-depth experience with.</p>
-            <div>
-                <ul>
-                    <li>GStreamer</li>
-                    <li>FFMPEG</li>
-                    <li>Debian Live Build</li>
-                    <li>RHEL</li>
-                    <li>Google Pub/Sub</li>
-                    <li>Tesseract OCR</li>
-                    <li>OSTree</li>
-                    <li>GRUB boot manager</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div>   
-        <h2>Areas of Interest: </h2>
-        <div>
-            <ul>
-                <li>Operating System Design</li>
-                <li>Video Processing Pipelines</li>
-                <li>Linux System Administration</li>
-                <li>Building Software Support for ARM64</li>
-            </ul>
-        </div>
-    </div>
+            <div class="carousel" aria-label="Gallery">
+                <ol class="carousel__viewport">
+                    <li id="carousel__slide1"
+                        tabindex="0"
+                        class="carousel__slide">
+                            <div class="subheading">
+                                <p class="subheading-text">Languages</p>
+                                <div class="triangle-heading"></div>
+                            </div>
+                            <ul class ="card-list">
+                                <li>Python</li>
+                                <li>Java</li>
+                                <li>C++</li>
+                                <li>Javascript</li>
+                                <li>Bash</li>
+                                <li>ARM/LEGv8 Assembly</li>
+                            </ul>
+                    <div class="carousel__snapper">
+                        <a href="#carousel__slide4"
+                        class="carousel__prev">Go to last slide</a>
+                        <a href="#carousel__slide2"
+                        class="carousel__next">Go to next slide</a>
+                    </div>
+                    </li>
+                    <li id="carousel__slide2"
+                        tabindex="0"
+                        class="carousel__slide">
+                            <div class="subheading">
+                                <p class="subheading-text">Software</p>
+                                <div class="triangle-heading"></div>
+                            </div>
+                            <ul class ="card-list">
+                                <li>GStreamer</li>
+                                <li>FFMPEG</li>
+                                <li>Debian Live Build</li>
+                                <li>RHEL</li>
+                                <li>Google Pub/Sub</li>
+                                <li>Tesseract OCR</li>
+                                <li>OSTree</li>
+                                <li>GRUB boot manager</li>
+                            </ul>
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide1"
+                        class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide3"
+                        class="carousel__next">Go to next slide</a>
+                    </li>
+                    <li id="carousel__slide3"
+                        tabindex="0"
+                        class="carousel__slide">
+                            <div class="subheading">
+                                <p class="subheading-text">Areas of Interest</p>
+                                <div class="triangle-heading"></div>
+                            </div>
+                            <ul class="card-list">
+                                <li>Operating System Design</li>
+                                <li>Video Processing Pipelines</li>
+                                <li>Linux System Administration</li>
+                                <li>Building Software Support for ARM64</li>
+                            </ul>
+                    <div class="carousel__snapper"></div>
+                    <a href="#carousel__slide2"
+                        class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide4"
+                        class="carousel__next">Go to next slide</a>
+                    </li>
+                </ol>
+                <aside class="carousel__navigation">
+                    <ol class="carousel__navigation-list">
+                    <li class="carousel__navigation-item">
+                        <a href="#carousel__slide1"
+                        class="carousel__navigation-button">Go to slide 1</a>
+                    </li>
+                    <li class="carousel__navigation-item">
+                        <a href="#carousel__slide2"
+                        class="carousel__navigation-button">Go to slide 2</a>
+                    </li>
+                    <li class="carousel__navigation-item">
+                        <a href="#carousel__slide3"
+                        class="carousel__navigation-button">Go to slide 3</a>
+                    </li>
+                    </ol>
+                </aside>
+            </div>
+
+            
+        </section>
+    </main>
+    <script src="index.js"></script>
 </body>
 </html>
