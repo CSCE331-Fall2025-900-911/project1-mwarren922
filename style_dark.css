@@ -1,11 +1,11 @@
 :root {
-  --background-color: #303030; /* Dark background */
+  --background-color: #303030; 
   --primary-accent-color: #1269cc;
   --secondary-accent-color: #51eefc;
   --tertiary-accent-color: #6d9ac7;
 
 
-  --text-color: #ffffff; /* Dark text */
+  --text-color: #ffffff;
   --card-background: #f5f7fa;
 }
 
@@ -98,14 +98,14 @@ h1.header-qual {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 10px solid #ffffff; /* Equivalent to border-2 border-slate-700 */
-  padding: 2rem; /* Equivalent to p-8 */
-  border-radius: 0.375rem; /* Equivalent to rounded-md */
-  background-color: var(--background-color); /* Equivalent to bg-white */
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Equivalent to shadow-xl */
+  border: 10px solid #ffffff; 
+  padding: 2rem;
+  border-radius: 0.375rem; 
+  background-color: var(--background-color); 
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); 
   color: var(--text-color);
-  margin: 0 auto; /* To center the inline-flex element within its parent */
-  max-width: 800px; /* Optional: adds a max-width to prevent it from getting too wide */
+  margin: 0 auto; 
+  max-width: 800px; 
 }
 
 .profile-box {
@@ -126,13 +126,13 @@ section.link-cards {
 }
 
 .card-container-tilt-right {
-  position: relative; /* This is the new parent for both the card and triangle */
+  position: relative;
   transform: rotate(10deg);
   min-width: 100px;
 }
 
 .card-container-tilt-left {
-  position: relative; /* This is the new parent for both the card and triangle */
+  position: relative; 
   transform: rotate(-10deg);
 }
 
@@ -416,7 +416,7 @@ section.social-links p {
 
 * {
   box-sizing: border-box;
-  scrollbar-color: transparent transparent; /* thumb and track color */
+  scrollbar-color: transparent transparent; 
   scrollbar-width: 0px;
 }
 
@@ -447,7 +447,7 @@ ol, li {
   margin: 150px auto;
   position: relative;
   height: 40vw;
-  max-height: 900px;         /* Prevents it from being too tall */
+  max-height: 900px; 
   min-height: 200px; 
   filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
