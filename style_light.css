@@ -180,7 +180,7 @@ section.link-cards {
     left: 0;
     width: 0;
     height: 0;
-    border-top: 50px solid var(--secondary-accent-color);
+    border-top: 50px solid #000;
     border-right: 50px solid transparent;
     border-bottom: 50px solid transparent;
     border-left: 50px solid transparent;
@@ -195,7 +195,7 @@ section.link-cards {
     left: 0;
     width: 0;
     height: 0;
-    border-top: 50px solid var(--secondary-accent-color);
+    border-top: 50px solid #000;
     border-right: 50px solid transparent;
     border-bottom: 50px solid transparent;
     border-left: 50px solid transparent;
@@ -210,7 +210,7 @@ section.link-cards {
     left: 0;
     width: 0;
     height: 0;
-    border-top: 50px solid #0000;
+    border-top: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 50px solid transparent;
     border-left: 50px solid transparent;
@@ -225,7 +225,7 @@ section.link-cards {
     left: 0;
     width: 0;
     height: 0;
-    border-top: 50px solid var(--secondary-accent-color);
+    border-top: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 50px solid transparent;
     border-left: 50px solid transparent;
@@ -281,9 +281,9 @@ section.social-links p {
 
 .qualifications-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .qualifications-section > * {
@@ -305,8 +305,8 @@ section.social-links p {
 
 .activity-container {
   display: flex;
-  flex-direction: row;
-  gap: 10vh;
+  flex-direction: column;
+  gap: 2vh;
 }
 
 .activity-image-container {
