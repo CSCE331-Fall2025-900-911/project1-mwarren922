@@ -44,7 +44,19 @@ header.header {
 
 header a {
     text-decoration: none;
-    color: lightgray;;
+    color: lightgray;
+    padding: 0.25rem;
+    border-radius: 0.0.75rem;
+    border: solid var(--text-color) 3px;
+}
+
+header button {
+    text-decoration: none;
+    background-color: var(--primary-accent-color);
+    color: lightgray;
+    padding: 0.25rem;
+    border-radius: 0.0.75rem;
+    border: solid var(--text-color) 3px;
 }
 
 button.theme-toggle {
@@ -198,7 +210,7 @@ section.link-cards {
     left: 0;
     width: 0;
     height: 0;
-    border-top: 50px solid var(--secondary-accent-color);
+    border-top: 50px solid #0000;
     border-right: 50px solid transparent;
     border-bottom: 50px solid transparent;
     border-left: 50px solid transparent;
@@ -257,10 +269,14 @@ section.social-links p {
 .subheading-text {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--dark-text-color);
+  color: var(--text-color);
   text-align: left;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
+  background-color: var(--primary-accent-color);
+  border: solid var(--secondary-accent-color) 3px;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 1rem;
 }
 
 .qualifications-section {
@@ -284,6 +300,7 @@ section.social-links p {
 .activity-containers {
   display: flex;
   flex-direction: column;
+  gap: 10vh;
 }
 
 .activity-container {
@@ -320,13 +337,15 @@ section.social-links p {
 
 .activity-text-container {
   position: relative;
-  color: var(--text-color);
-  background-color: var(--primary-accent-color);
+  color: var(--dark-text-color);
+  border: solid var(--primary-accent-color) 3px;
+  background-color: var(--background-color);
   padding: 2rem;
   align-self: flex-start;
   max-width: 50vw;
   border-radius: 1rem;
 }
+
 
 .qualifictations-section {
   display: flex;
@@ -344,7 +363,6 @@ section.social-links p {
   padding: 2rem;
   gap: 3rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); 
 }
 
 .resume-window {
@@ -355,10 +373,10 @@ section.social-links p {
 .card-list {
   display: flex;
   flex-direction: column;
+  border: solid var(--primary-accent-color) 3px;
   gap: 2rem;
   color: var(--dark-text-color);
   font-size: 2rem;
-  background-color: var(--tertiary-accent-color);
   border-radius: 1rem;
   padding: 1rem
 }
@@ -445,7 +463,6 @@ ol, li {
   height: 40vw;
   max-height: 900px; 
   min-height: 200px; 
-  filter: drop-shadow(0 0 10px #0003);
   perspective: 100px;
 }
 
@@ -470,7 +487,7 @@ ol, li {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  background-color: var(--tertiary-accent-color);
+  background-color: var(--background-color);
 }
 .carousel__slide:before {
   position: absolute;
